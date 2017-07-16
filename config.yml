@@ -1,0 +1,20 @@
+#
+# Build configuration for Circle CI
+#
+
+general:
+    artifacts:
+        - /home/ubuntu/Circleci/app/build/outputs/apk/
+
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+    override:
+       - chmod +x gradlew
+
+test:
+    override:
+        - (./gradlew assemble):
+            timeout: 360
