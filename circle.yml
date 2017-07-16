@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Download Dependencies
           command: chmod +x gradlew
-      - test:
+      - run:
            override:
             name :  buildme
             command: ./gradlew assembleDebug    
