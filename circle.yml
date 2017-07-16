@@ -13,6 +13,11 @@ jobs:
       - run:
           name: Download Dependencies
           command: chmod +x gradlew
+      - test:
+           override:
+            name :  buildme
+            command: ./gradlew assembleDebug    
+            path: app/build
       - save_cache:
           paths:
             - ~/.gradle
@@ -25,3 +30,4 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
+          
