@@ -15,7 +15,7 @@ jobs:
           command: chmod +x gradlew
       - run:
             name :  buildme
-            command: ./gradlew assembleDebug    
+            command: gradlew assembleDebug    
             path: app/build
       - save_cache:
           paths:
